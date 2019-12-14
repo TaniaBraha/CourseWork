@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "My course work app",
   "engines": {
-    "node": "12.13.0"
+    "node": "12.13.0",
+    "npm": "6.12.0"
   },
   
   "scripts": {

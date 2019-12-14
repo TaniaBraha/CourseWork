@@ -1,4 +1,4 @@
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const express = require("express");
 const bodyParser = require("body-parser");
 const http = require("http");
@@ -36,6 +36,10 @@ app.use(express.static(__dirname));
 app.use(express.static(__dirname + "/public"));
 app.use(express.static('css'));
 app.use(express.static('img'));
+
+app.get("/",function(req, res){
+      res.render("firstpage.hbs");
+});
 
 app.get("/create", function(req, res){
     fs.createReadStream('public/create.html').pipe(res);

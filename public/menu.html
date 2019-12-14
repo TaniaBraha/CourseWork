@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<title>!Pizza Re-Shop!</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/first.css">
+	</head>
+	<body>
+		<script src="js/script1.js"></script>
+		<header class="header">
+			<span>Mon-Fri: 10am-11pm  Sat-Sun: 9am-01am  (+380)xxxxxxxxx</span>
+			<div class="up_header">
+				<div class="logo">
+					<span>Pizza</span><br>
+					<span>Shop</span>
+				</div>	
+				<nav>
+					<ul>
+						<li><a href="">Home</a></li>
+						<li><a href="">About</a></li>
+						<li><a href="">Menu</a></li>
+						<li><a href="">Order online</a></li>
+						<li><a href="">Contact</a></li>
+					</ul>
+				</nav>
+				<div class="autorization">
+					<a href="">Sign In</a>
+					<span>/</span>
+					<a href="">Log in</a>
+					<div class="hidden">
+						<form action="" method="post">
+							<fieldset class="field">
+							<legend>Log In</legend>
+							<p><label for="cust_email">Email: </label><input type="email" id="cust_email" placeholder="petya@ukr.net" name="cust_email" required></p>
+							<p><label for="cust_pass">Password: </label><input type="password" id="cust_pass" name="cust_pass" required></p>
+							</fieldset>
+							<p><input type="submit" value="Send"></p>
+						</form>
+						<form action="" method="post">
+							<fieldset class="field">
+								<legend>Registration</legend>
+								<div class="form_left">
+									<p><label for="cust_email">Email: </label><input type="email" id="cust_email" name="cust_email" required></p>
+									<p><label for="cust_pass">Password: </label><input type="password" id="cust_pass" name="cust_pass" required></p>
+									<p>Password again: <input type="password" name="password" required></p>
+									<p><label for="cust_name">Your name: </label><input type="text" id="cust_name" name="cust_name" required></p>
+									<p><label for="cust_birth_date">Birth Date: </label><input type="date" id="cust_birth_date" name="cust_birth_date" required></p>
+								</div>
+								<div class="form_right">
+									<p><label for="cust_city">City: </label><input type="text" id="cust_city" name="cust_city" required></p>
+									<p><label for="cust_street">Street: </label><input type="text" id="cust_street" name="cust_street" required></p>
+									<p><label for="cust_house">House: </label><input type="number" id="cust_house" name="cust_house"></p>
+									<p><label for="cust_porch">Porch: </label><input type="number" id="cust_porch" name="cust_porch"></p>
+									<p><label for="cust_flat">Flat: </label><input type="number" id="cust_flat" name="cust_flat"></p>
+									<p><label for="cust_floor">Floor: </label><input type="number" id="cust_floor" name="cust_floor"></p>
+									<p><label for="cust_phone">Phone: </label><input type="phone" id="cust_phone" name="cust_phone"></p>
+								</div>
+							</fieldset>
+							<p><input type="submit" value="Send"></p>
+						</form>
+					</div>
+				</div>	
+			</div>	
+		</header>
+		<main>
+			<div class="reservation">
+				<h4>Make a reservation</h4>
+			<form action="" method="post">
+				<fieldset class="field">
+					<legend>Reservation</legend>
+					<p><label for="res_date"></label><input type="date" id="res_date" name="res_date"></p>
+					<p><label for="res_time"></label><input type="time" id="res_time" name="res_time" min="10:00" max="22:30" step="3600"></p>
+					<p><label for="res_people"></label>
+						<select name="res_num">
+							<option value="1">1 person</option>
+							<option value="2">2 person</option>
+							<option value="3">3 person</option>
+							<option value="4">4 person</option>
+							<option value="5">5 person</option>
+							<option value="6">6 person</option>
+						</select>						
+					</p>
+				</fieldset>
+				<p><input type="submit" value="Send"></p>
+			</form>
+			</div>
+		<!--	<div class="tab">
+				  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+				  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+				  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+			</div>
+			тут будет меню
+-->
+<!-- Tab content -->
+<div id="London" class="tabcontent">
+  <h3>London</h3>
+  <p>London is the capital city of England.</p>
+</div>
+
+<div id="Paris" class="tabcontent">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p>
+</div>
+		</main>		
+		<footer>
+			<aside class="social_links">
+				<ul>
+					<li><a href="https://www.facebook.com/"><img src="img/facebook.jpg" alt="facebook link" width="40" height="40"></a></li>
+					<li><a href="https://twitter.com/?lang=ru"><img src="img/twitter.png" alt="twitter link" width="40" height="40"></a></li>
+					<li><a href="https://www.instagram.com/?hl=ru"><img src="img/instagram.png" alt="instagram link" width="40" height="40"></a></li>
+				</ul>
+			</aside>
+			<div class="footer-logo">
+				<span>Pizza</span>
+				<span>Re-Shop!</span>
+			</div>
+			<div>
+				<p>Some text fffffffffffffffffffffffffffffffffffff</p>
+			</div>
+			<div class="footer_contact">
+				<ul>
+					<li>Our adress: Metalistiv street, 3</li>
+					<li>Our phone: (+380)9932904543</li>
+					<li>Our post: ourmail@gmail.com</li>
+				</ul>
+			</div>
+		</footer>
+	</body>
+</html>

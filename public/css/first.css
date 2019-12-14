@@ -1,0 +1,377 @@
+body{
+  margin:0;
+  padding: 0;
+  --main_color:#696969;
+  --green_color: #20B2AA;
+  --back_color: #A9A9A9;
+  background-color: var(--back_color);
+  opacity: 0.9;
+}
+a{
+  text-decoration: none;
+}
+
+.header,footer{
+  background-color: var(--main_color);
+  border-bottom:1px solid var(--green_color);
+  color: white;
+  font-family: courier;
+  width:100%;
+}
+.header{
+  position: fixed;
+  z-index: 10;
+  top: 0;
+}
+button{
+  background: var(--green_color);
+  color: white;
+  border: none;
+  font-size: 1em;
+  padding: 3px;
+  cursor: pointer;
+  border-radius: 5px;
+  color:black;
+  font-weight: bold;
+  opacity: 0.85;
+}
+.up_header{
+  text-align: right;
+  padding-right: 10%;
+}
+.up_header span{
+  border-bottom:1px solid var(--green_color);
+}
+.down_header{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 0;
+}
+.logo{
+  color: black;
+  border: 1px solid #20B2AA;
+  padding: 5px 8px 0px 8px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size:1.5em ;
+}
+ul,p,h2{
+  margin:0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu ul{
+  display: flex;
+}
+
+.menu ul li,.login{
+  padding: 10px;
+  margin: 0 10px;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+.menu .icon{
+  display: none;
+}
+
+.header a:hover,footer a:hover{
+  color: var(--green_color);
+}
+.header a{
+  text-transform: uppercase;
+  color:inherit;
+}
+.login{
+  text-align: right;
+  font-weight: 100;
+}
+
+main{
+ margin: 90px 0px 10px 0px;
+}
+.about_us{
+  width: 100%;
+  height: 500px;
+  background-image: url(../img/about.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color:inherit;
+  border-top:1px solid var(--green_color);
+  border-bottom:1px solid var(--green_color);
+  position: relative;
+  color:white;
+}
+.about_us h2{
+  position: absolute;
+  top:20%;
+  left:20%;
+  transform: translate(-50%,0);
+}
+.about_us p{
+  position: absolute;
+  top:50%;
+  left:60%;
+  transform: translate(-50%,0);
+}
+footer{
+  position: inherit;
+  color: white;
+ }
+ .footer_content{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding:10px;
+ }
+ .social_links img{
+  width:20px;
+  height: 20px;
+ }
+ footer a{
+    color:inherit;
+ }
+.our_cookers img{
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  /*margin: 10px 20px;*/
+}
+.our_cookers{
+    background:linear-gradient(to top, white,var(--back_color));
+    text-align: center;
+    padding: 20px;
+}
+.cookers_pic ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.chefs{
+  width: 250px;
+  margin: 10px 20px;
+}
+
+.our_cookers h4{
+    font-size: 1.6em;
+}
+.comments{
+  width: 100%;
+  height: 400px;
+  background-image: url(../img/pic1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-top:2px solid var(--green_color);
+  border-bottom:2px solid var(--green_color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.separate_comment{
+  margin:20px;
+  border: 1px solid var(--green_color);
+  padding:10px;
+  border-radius: 5px;
+}
+.comments h4,.reservation h4{
+  margin-top:0px;
+  padding-top: 20px;
+}
+.reservation{
+  width: 100%;
+  height: 400px;
+  background-image: url(../img/pic3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-bottom:1px solid var(--green_color);
+}
+.reservation{
+  text-align: center;
+  color:white;
+  position: relative;
+}
+.reservation h4{
+  position: absolute;
+  font-size: 2em;
+  top:20%;
+  left:50%;
+  transform: translate(-50%,0);
+}
+.reservation form{
+    position: absolute;
+    top:30%;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.reservation .field{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.reservation .field p{
+  margin:20px;  
+}
+.field input,.res_num{
+  background: transparent;
+  width: 160px;
+  height: 32px;
+  border: solid 2px var(--green_color);
+  outline: none;
+  font-size: 16px;
+  color: white;
+}
+.res_num option{
+  background-color: var(--green_color);
+}
+.res_num :not(:first-child){
+  background-color: pink; 
+}
+.reserv_button{
+  width: 216px;
+  height: 48px;
+  background: var(--green_color);
+  color: white;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.popupForm .field input{
+  color: black;
+  width:100%;
+}
+.popupForm .field input[type=email]::placeholder{
+  color: pink;
+}
+.popupForm .field input[type=email]{
+  color: blue;
+}
+.popupForm form{
+  border: none;
+}
+.gender{
+  display: flex;
+}
+#sonic{
+  color:blue;
+}
+.container{
+  margin-top: 150px;
+}
+
+@media screen  and (max-width: 1200px) {
+  .down_header{
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  .menu ul li,.up_header{
+    font-size: 0.9em;
+    padding: 5px;
+  }
+  .up_header{
+    text-align: center;
+  }
+  .footer_content{
+    flex-direction: column;
+  }
+  main{
+    margin: 150px 0px;
+  }
+  .about_us h2{
+    left: 50%;
+    top: 30%;
+  }
+  .about_us p{
+    top:50%;
+    left: 50%;
+  }
+  .chefs{
+    width: 170px;
+  }
+  .our_cookers img{
+    height: 200px;
+  }
+  main{
+    margin-bottom: 10px;
+  }
+  .container{
+    margin-top:180px;
+  }
+}
+@media screen  and (max-width: 600px){
+  .about_us h2{
+    top: 20%;
+  }
+  .about_us p{
+    top:40%;
+  }
+  .comments{
+    flex-direction: column;
+  }
+  .reservation .field{
+    flex-direction: column;
+  }
+  .reservation h4{
+    top:10%;
+  }
+  .reservation form{
+    top:30%;
+  }
+  .reservation .field p{
+    margin:5px;  
+  }
+  .reserv_button input{
+    margin-top: 10px;
+  }
+  main{
+    margin-bottom: 5px;
+  }
+}
+
+
+
+/* Style the buttons that are used to open the tab content */
+/*----------------------------------------------
+CSS settings for HTML div Exact Center
+------------------------------------------------*/
+@import "http://fonts.googleapis.com/css?family=Raleway";
+#abc,#abc2,#order,#reserv_info {
+width:100%;
+height:100%;
+opacity:.95;
+top:0;
+left:0;
+display:none;
+position:fixed;
+background-color:#313131;
+overflow:auto
+}
+img.close {
+position:absolute;
+right:-14px;
+top:-14px;
+cursor:pointer
+}
+div.popupForm {
+position:fixed;
+left:50%;
+top:40%;
+margin-left:-202px;
+font-family:'Raleway',sans-serif
+}
+.form {
+max-width:500px;
+min-width:250px;
+padding:10px 50px;
+border:2px solid gray;
+border-radius:10px;
+font-family:raleway;
+background-color:#fff
+}

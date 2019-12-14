@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<title>!Pizza Re-Shop!</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/first.css">
+		<script src="js/script1.js"></script>
+	</head>
+	<body id="body" >
+		<header class="header">
+			<div class="up_header">
+			<span>Mon-Fri: 10am-11pm  Sat-Sun: 9am-01am  (+380)662212465</span>
+			</div>
+				<div class="down_header">
+					<div class="logo">
+						<span>Pizza Re-Shop</span>
+					</div>	
+					<nav class="menu">
+						<ul>
+							<li><a href="">Home</a></li>
+							<li><a href="">About</a></li>
+							<li><a href="menu.html" target="_blank">Menu</a></li>
+							<li><a href="">Order online</a></li>
+							<li><a href="">Contact</a></li>
+						</ul>
+					</nav>
+					<div class="login">
+						<button class="popup" onclick="div_show()">SIGN IN</button>
+						<span>/</span>
+						<button class="popup" onclick="div_show2()" >LOG IN</button>
+					</div>
+				</div>
+		</header>	
+		<main>	
+				<div class="autorization">
+					<div class="hidden">
+						<div id="abc"><div class="popupForm">
+						<form action="" method="post" class="form" name="form1">
+							<img src="img/close.png" width="25px" height="25px" alt="close_pic" class="close" onclick="div_hide()">
+							<fieldset class="field">
+							<legend>Log In</legend>
+							<p><label for="cust_email">Email: </label><input type="email" id="cust_email" placeholder="petya@ukr.net" name="cust_email" required></p>
+							<p><label for="cust_pass">Password: </label><input type="password" id="cust_pass" name="cust_pass" required></p>
+							</fieldset>
+							<p><input type="submit" value="Send"></p>
+						</form>
+						</div>
+						</div>
+						<div id="abc2"><div class="popupForm">
+						<form action="" method="post" class="form" name="form2">
+							<img src="img/close.png" width="25px" height="25px" alt="close_pic" class="close" onclick="div_hide2()">
+							<fieldset class="field">
+								<legend>Registration</legend>
+								<div class="form_left">
+									<p><label for="cust_email">Email: </label><input type="email" id="cust_email" name="cust_email" required></p>
+									<p><label for="cust_pass">Password: </label><input type="password" id="cust_pass" name="cust_pass" required></p>
+									<p>Password again: <input type="password" name="password" required></p>
+									<p><label for="cust_name">Your name: </label><input type="text" id="cust_name" name="cust_name" required></p>
+									<p><label for="cust_birth_date">Birth Date: </label><input type="date" id="cust_birth_date" name="cust_birth_date" required></p>
+									<p>Gender:</p>
+									<div>
+									<label for="cust_gender1">Male</label><input type="radio" id="cust_gender1" name="gender" value="male" checked>
+									<label for="cust_gender2">Female</label><input type="radio" id="cust_gender2" name="gender" value="female">
+									</div>
+								</div>
+								<div class="form_right">
+									<p><label for="cust_city">City: </label><input type="text" id="cust_city" name="cust_city" required></p>
+									<p><label for="cust_street">Street: </label><input type="text" id="cust_street" name="cust_street" required></p>
+									<p><label for="cust_house">House: </label><input type="number" id="cust_house" name="cust_house"></p>
+									<p><label for="cust_porch">Porch: </label><input type="number" id="cust_porch" name="cust_porch"></p>
+									<p><label for="cust_flat">Flat: </label><input type="number" id="cust_flat" name="cust_flat"></p>
+									<p><label for="cust_floor">Floor: </label><input type="number" id="cust_floor" name="cust_floor"></p>
+									<p><label for="cust_phone">Phone: </label><input type="phone" id="cust_phone" name="cust_phone"></p>
+								</div>
+							</fieldset>
+							<p><input type="submit" value="Send"></p>
+						</form>
+						</div>
+					</div>
+					</div>
+				</div>	
+		
+		
+			<div>
+				<table width="200" border="2">
+					<!--<colgroup>	</colgroup>-->
+					<caption>Table name</caption>
+					<tr>
+						<td rowspan="2">1</td><td align="right">2</td><td align="right">3</td><td rowspan="2">4</td>
+					</tr>
+					<tr>
+						<td align="right">5</td><td align="right">6</td>
+					</tr>
+					<tr>
+						<td colspan="4">7</td>
+					</tr>
+					<tr>
+						<td>8</td><td align="left">9</td><td align="left">10</td><td>11</td>
+					</tr>
+				</table>
+			</div>	
+			<div class="reservation">
+				<h4>Make a reservation</h4>
+					<form action="" method="post">
+						<fieldset class="field">
+							<legend>Reservation</legend>
+							<p><label for="res_date"></label><input type="date" id="res_date" name="res_date"></p>
+							<p><label for="res_time"></label><input type="time" id="res_time" name="res_time" min="10:00" max="22:30" step="3600"></p>
+							<p><label for="res_people"></label>
+								<select name="res_num">
+									<option value="1">1 person</option>
+									<option value="2">2 person</option>
+									<option value="3">3 person</option>
+									<option value="4">4 person</option>
+									<option value="5">5 person</option>
+									<option value="6">6 person</option>
+								</select>						
+							</p>
+						</fieldset>
+						<p><input type="submit" value="Send"></p>
+					</form>
+			</div>
+			<div><iframe width="560" height="315" src="https://www.youtube.com/embed/FF2wiJM921g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+			<audio src="audio.mp3" controls></audio><br>
+			<bdi title="bdi">שבת</bdi>
+			<p><input title="datalist" list="number">
+			   <datalist id="number">
+			    <option value="1"></option>
+			    <option value="2"></option>
+			    <option value="3"></option>
+				</datalist>
+			</p>
+			<details title="details" open="open">
+     		<summary>Описание</summary>
+     		<p>Создает список вариантов, которые можно выбирать при наборе в текстовом поле. Изначально этот список скрыт и становится доступным при получении полем фокуса или наборе текста.</p></details>
+
+     		<dialog open>Создает список вариантов, которые можно выбирать при наборе в текстовом поле. Изначально этот список скрыт и становится доступным при получении полем фокуса или наборе текста
+     		</dialog>
+  			 <embed src="audio.mp3" width="400" height="300"><br>
+  			 <meter value="20" max="100" low="10" high="60">Низкий</meter><br>
+			<picture>
+				 <source srcset="img/pic1.jpg" media="(min-width: 400px)">
+				 <source srcset="img/pic2.jpg" media="(min-width: 600px)">	
+				 <img src="img/pic3.jpg" alt="water">
+			</picture>
+			<br>
+			<progress title="progress" max="100" value="25">
+			    Загружено на <span id="value">25</span>%
+			</progress>
+
+			<template>
+			  <h2>Hide picture</h2>
+			  <img src="pic2.jpg">
+			</template>
+
+			<section class="about_us">
+				<h4>About us</h4>
+				<p>Pizza is one of the world's most popular dishes so it's no surprise that many claim to have created the world's first real pizza.
+					Our restaurant was founded at <time>1973-10-02</time>. It is one of the oldest and best places to try the real test of traditional pizza.
+				We also have a newcoming chef from China? so can enjoy chinese food also. Maybe you ike sweeties? Not a ploblem actually. Try our delicious deserts made by our chef.
+					Do not hesitate anymore. You will never forget this taste.</p>
+			</section>
+			<section class="our_cookers">
+				<h4>Meet our cheefs</h4>
+				<article> Мы гордимся, что в наших ресторанах работают настоящие профессионалы. Наши повара - мастера своего дела с золотыми руками
+А мы, в свою очередь, стараемся разнообразить наше меню так, чтобы каждый гость нашёл блюдо по вкусу
+Приходите к нам за любимыми блюдами.</article>
+				<ul>
+					<li>
+						<figure>
+							<p><img src="img/chef_1.jpg" alt="chef1"></p>
+							<figcaption>
+								<p>Medina</p>
+								<p>Top Chef</p>
+							</figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<p><img src="img/chef_2.jpg" alt="chef2"></p>
+							<figcaption>
+								<p>Alphonso</p>
+								<p>Sauce Chef</p>
+							</figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<p><img src="img/chef_3.jpg" alt="chef3"></p>
+							<figcaption>
+								<p>Tom</p>
+								<p>Pasta Chef</p>
+							</figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<p><img src="img/chef_4.jpg" alt="chef4"></p>
+							<figcaption>
+								<p>Minari</p>
+								<p>Sauce Chef</p>
+							</figcaption>
+						</figure>
+					</li>
+				</ul>
+			</section>
+			<section class="comments">
+				<h4>Whay our customers think about us?</h4>
+				<div class="separate_comment">
+					<p>Blablalalalalal(thinking)</p>
+					<p>Peter Cavinski</p>
+				</div>
+					<aside class="comm_aside">
+						<div class="separate_comment">
+							<p>Blablalalalalal(thinking)</p>
+							<p>Lara Gin</p>
+						</div>
+						<div class="separate_comment">
+							<p>Blablalalalalal(thinking)</p>
+							<p>Harry Potter</p>
+						</div>
+						<div class="separate_comment">
+							<p>Blablalalalalal(thinking)</p>
+							<p>Sonic</p>
+						</div>
+					</aside>
+			</section>
+		</main>		
+		<footer>
+			<aside class="social_links">
+				<ul>
+					<li><a href="https://www.facebook.com/"><img src="img/facebook.jpg" alt="facebook link" width="40" height="40"></a></li>
+					<li><a href="https://twitter.com/?lang=ru"><img src="img/twitter.png" alt="twitter link" width="40" height="40"></a></li>
+					<li><a href="https://www.instagram.com/?hl=ru"><img src="img/instagram.png" alt="instagram link" width="40" height="40"></a></li>
+				</ul>
+			</aside>
+			<div class="footer-logo">
+				<span>Pizza</span>
+				<span>Re-Shop!</span>
+			</div>
+			<div>
+				<p>Some text fffffffffffffffffffffffffffffffffffff</p>
+			</div>
+			<div class="footer_contact">
+				<ul>
+					<li>Our adress: Metalistiv street, 3</li>
+					<li>Our phone: (+380)9932904543</li>
+					<li>Our post: ourmail@gmail.com</li>
+				</ul>
+			</div>
+		</footer>
+	</body>
+</html>

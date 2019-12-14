@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<title>!Pizza Re-Shop!</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="/css/first.css" type="text/css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<meta name="viewport" content="width=device-width" />
+		<script src="js/script1.js"></script>
+		<script src="js/firstpage.js"></script>
+	</head>
+	<body id="body" >
+		<header class="header" >
+			<div class="up_header">
+			<span>Mon-Fri: 10am-11pm  Sat-Sun: 9am-00am  (+380)662212465</span>
+			</div>
+				<div class="down_header">
+					<div class="logo">
+						<span>Pizza Re-Shop</span>
+					</div>	
+					<div class="login">
+						<button class="popup" ><a href="/sign_in">SIGN IN</a></button>
+						<span>/</span>
+						<button class="popup"><a href="/sign_up">SIGN UP</a></button>
+					</div>
+					<nav class="menu" id="myNav">
+						<ul>
+							<li><a href="/firstpage.html">Home</a></li>
+							<li><a href="#chefs">About</a></li>
+							<li><a href="/menu" target="_blank">Menu</a></li>
+							<li><a href="#reserv">Reservation</a></li>
+							<li><a href="#cont">Contact</a></li>
+							
+						</ul>
+					</nav>
+				</div>
+		</header>
+
+		<main>	
+			<div class="about_us">
+			<h2>Discover world of food with us</h2>
+				<p>Pizza is one of the world's most popular dishes so it's no surprise that many claim to have created the world's first real pizza.
+					Our restaurant was founded at 1973-10-02. It is one of the oldest and best places to try the real test of traditional pizza.
+				We also have a newcoming chef from China? so can enjoy chinese food also. Maybe you ike sweeties? Not a ploblem actually. Try our delicious deserts made by our chef.
+					Do not hesitate anymore. You will never forget this taste.
+				</p>
+			</div>	
+				
+			<a id="chefs"></a>	
+			<section class="our_cookers">
+				<h4>Meet our cheefs</h4>
+				<article> All chefs need a high degree of training and professional experience before they are able to manage and maintain their own kitchen operation. Although many chefs have completed four-year university degrees, training can be completed at technical schools, culinary arts schools or community colleges. 
+				In addition to years of training and professional experience, chefs must exhibit strong interpersonal and leadership skills. They are responsible for managing and inspiring an entire kitchen staff and motivating them to work efficiently without sacrificing quality. </article>
+				
+				<div class="cookers_pic">
+				<ul>
+					<li>
+						<div class="chefs">
+							<p><img src="img/chef_1.jpg" alt="chef1"></p>
+							<figcaption>
+								<p>Medina</p>
+								<p>Top Chef</p>
+							</figcaption>
+						</div>
+					</li>
+					<li>
+						<div class="chefs">
+							<p><img src="img/chef_2.jpg" alt="chef2"></p>
+							<figcaption>
+								<p>Alphonso</p>
+								<p>Sauce Chef</p>
+							</figcaption>
+						</div>
+					</li>
+					<li>
+						<div class="chefs">
+							<p><img src="img/chef_3.jpg" alt="chef3"></p>
+							<figcaption>
+								<p>Tom</p>
+								<p>Pasta Chef</p>
+							</figcaption>
+						</div>
+					</li>
+					<li>
+						<div class="chefs">
+							<p><img src="img/chef_4.jpg" alt="chef4"></p>
+							<figcaption>
+								<p>Minari</p>
+								<p>Sauce Chef</p>
+							</figcaption>
+						</div>
+					</li>
+				</ul>
+				</div>
+			</section>
+			<section class="comments">
+				<div class="comm1">
+				<h4>What our customers think about us?</h4>
+				<div class="separate_comment">
+					<p>Blablalalalalal(thinking)</p>
+					<p>Peter Cavinski</p>
+				</div>
+				</div>
+					<aside class="comm_aside">
+						<div class="separate_comment">
+							<p>Blablalalalalal(thinking)</p>
+							<p>Lara Gin</p>
+						</div>
+						<div class="separate_comment">
+							<p>Blablalalalalal(thinking)</p>
+							<p>Harry Potter</p>
+						</div>
+						<div class="separate_comment">
+							<p>Blablalalalalal(thinking)</p>
+							<p id="sonic">Sonic</p>
+						</div>
+					</aside>
+			</section>
+			<a name="reserv"></a>
+			<section class="reservation">
+				<h4>Make a reservation</h4>
+					<form action="/reserv" method="post" class="spec_form" name="spec_form">
+						<div class="field">
+							<p><label for="res_date"></label><input type="date" id="res_date" name="res_date" onchange="DateChange()"></p>
+							<p><label for="res_time"></label><input type="time" id="res_time" name="res_time" min="10:00" max="22:30" step="3600"  ></p>
+							
+							<p><label for="res_people"></label>
+								<select name="res_num" class="res_num" id="res_num">
+									<option value="1">1 person</option>
+									<option value="2">2 person</option>
+									<option value="3">3 person</option>
+									<option value="4">4 person</option>
+									<option value="5">5 person</option>
+									<option value="6">6 person</option>
+								</select>						
+							</p>
+							<label for="res_name"></label><input type="hidden" id="res_name1" name="res_name1" value="someName">
+							<label for="res_phone"></label><input type="hidden" id="res_phone1" name="res_phone1" value="somePhone">
+						</div>
+						<p><label for="restaurant"></label>
+								<select name="res_res" class="res_num">
+									<option value="1">First Restaurant</option>
+									<option value="2">Second Restaurant</option>
+								</select>						
+						</p>
+						<button class="reserv_button" type="button">Send</button>
+					</form>
+			</section>
+
+			<div id="reserv_info">
+				<div class="popupForm">
+				<form class="form" id="reserv_form" method="post" >
+					<img src="img/close.png" width="25px" height="25px" alt="close_pic" class="close" onclick="div_hide4()">
+					<input type="text" name="res_name" id="res_name" placeholder="Your Name" required/>
+					<input type="email" name="res_phone" id="res_phone" placeholder="Your phone" required />
+					
+					<button class="reserv_info_button" type="button">Send</button>
+				</form>
+				</div>
+			</div>
+		</main>		
+		<footer>
+			<a name="cont"></a>
+			<div class="footer_content">
+			<div>
+				<p>Join us on our social accounts</p>
+				<p>Feel free to contact us</p>
+			</div>
+			<div class="social_links">
+				<ul>
+					<li><a href="https://www.facebook.com/"><img src="img/facebook.png" alt="facebook link"> facebook_account</a></li>
+					<li><a href="https://twitter.com/?lang=ru"><img src="img/twitter.png" alt="twitter link"> twitter_account</a></li>
+					<li><a href="https://www.instagram.com/?hl=ru"><img src="img/instagram.png" alt="instagram link"> instagram account</a></li>
+				</ul>
+			</div>			
+			<div class="footer_contact">
+				<ul>
+					<li>Our adress: Metalistiv street, 3</li>
+					<li>Our phone: (+380)9932904543</li>
+					<li>Our post: ourmail@gmail.com</li>
+				</ul>
+			</div>
+			</div>
+		</footer>
+	</body>
+</html>

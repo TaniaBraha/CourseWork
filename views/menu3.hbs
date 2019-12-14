@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<title>!Pizza Re-Shop!</title>
+		<meta charset="utf-8">
+  <link rel="stylesheet" href="css/first.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <script src="js/my_store.js"></script>
+   <script src="js/modules.js"></script>
+
+	</head>
+	<body>
+		<script src="js/script1.js"></script>
+
+  	<header>
+      <header class="header" >
+      <div class="up_header">
+      <span>Mon-Fri: 10am-11pm  Sat-Sun: 9am-00am  (+380)662212465</span>
+      </div>
+        <div class="down_header">
+          <div class="logo">
+            <span>Pizza Re-Shop</span>
+          </div>  
+          <div class="login">
+            <button class="popup" ><a href="/sign_in">SIGN IN</a></button>
+            <span>/</span>
+            <button class="popup"><a href="/sign_up">SIGN UP</a></button>
+          </div>
+          <img src="/img/basket.png" alt="basket" onclick="div_show2()" style="cursor:pointer;">
+          <nav class="menu" id="myNav">
+            <ul>
+              <li><a href="/firstpage.html">Home</a></li>
+              <li><a href="#chefs">About</a></li>
+              <li><a href="/menu" target="_blank">Menu</a></li>
+              <li><a href="#reserv">Reservation</a></li>
+              <li><a href="#cont">Contact</a></li>
+              
+            </ul>
+          </nav>
+        </div>
+		</header>
+		<main>
+      <div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Pizza')">Pizza</button>
+  <button class="tablinks" onclick="openCity(event, 'Drinks')">Drinks</button>
+  <button class="tablinks" onclick="openCity(event, 'Sweeties')">Sweeties</button>
+</div>
+
+<!-- Tab content -->
+<div class="content">
+<div id="Pizza" class="tabcontent">
+  <ul class="shop-items">
+        {{#each d1}}
+            <li class="shop-item">
+                <img src="{{this.dh_pic}}" class="shop-item-image"><br>
+                <div class="shop-item-details">
+                <span class="shop-item-title">{{this.dh_name}}</span>
+                <span class="shop-item-price">{{this.price}}</span>
+              <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+              </div>
+          </li>
+        {{/each}}
+  </ul>
+</div>
+
+<div id="Drinks" class="tabcontent">
+ <ul class="shop-items">
+        {{#each d2}}
+            <li class="shop-item">
+                <img src="{{this.dh_pic}}" class="shop-item-image"><br>
+                <div class="shop-item-details">
+                <span class="shop-item-title">{{this.dh_name}}</span>
+                <span class="shop-item-price">{{this.price}}</span>
+              <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+              </div>
+          </li>
+        {{/each}}
+  </ul>
+</div>
+
+<div id="Sweeties" class="tabcontent">
+<ul class="shop-items">
+        {{#each d3}}
+            <li class="shop-item">
+                <img src="{{this.dh_pic}}" class="shop-item-image"><br>
+                <div class="shop-item-details">
+                <span class="shop-item-title">{{this.dh_name}}</span>
+                <span class="shop-item-price">{{this.price}}</span>
+              <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+              </div>
+          </li>
+        {{/each}}
+  </ul>
+</div>
+</div>
+
+      <div id="abc2"><div class="popupForm">
+        <form action="/try" method="post" class="form">
+          <img src="img/close.png" width="25px" height="25px" alt="close_pic" class="close" onclick="div_hide2()">
+            <h2 class="section-header">CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">$0</span>
+            </div>
+            <button class="btn btn-primary btn-purchase" type="button" onclick="div_show3()">PURCHASE</button>
+        </form>
+        </div>
+    </div>
+
+    <div id="order">
+        <div class="popupForm">
+          <form action="/order_info" method="post" class="form">
+          <img src="img/close.png" width="25px" height="25px" alt="close_pic" class="close" onclick="div_hide3()">
+            <h2 class="section-header">Make an order</h2>
+              <p><label for="ord_date">Date</label><input type="date" id="res_date" name="ord_date"></p>
+              <p><label for="ord_time">Time</label><input type="time" id="res_time" name="ord_time" min="10:00" max="22:30"></p>
+              <p><label for="restaurant">Restaurant</label>
+                <select name="ord_res">
+                  <option value="1">First Restaurant</option>
+                  <option value="2">Second Restaurant</option>
+                </select>           
+            </p>
+            <p><label for="ord_date">Adress</label><input type="text" id="ord_adr" name="ord_adr"></p>
+            <button class="order_button" type="button">OK</button>
+        </form>
+        </div>
+    </div>
+
+		</main>		
+		<footer>
+			<a name="cont"></a>
+			<div class="footer_content">
+			<div>
+				<p>Join us on our social accounts</p>
+				<p>Feel free to contact us</p>
+			</div>
+			<div class="social_links">
+				<ul>
+					<li><a href="https://www.facebook.com/"><img src="img/facebook.png" alt="facebook link"> facebook_account</a></li>
+					<li><a href="https://twitter.com/?lang=ru"><img src="img/twitter.png" alt="twitter link"> twitter_account</a></li>
+					<li><a href="https://www.instagram.com/?hl=ru"><img src="img/instagram.png" alt="instagram link"> instagram account</a></li>
+				</ul>
+			</div>			
+			<div class="footer_contact">
+				<ul>
+					<li>Our adress: Metalistiv street, 3</li>
+					<li>Our phone: (+380)9932904543</li>
+					<li>Our post: ourmail@gmail.com</li>
+				</ul>
+			</div>
+			</div>
+		</footer>
+	</body>
+</html>

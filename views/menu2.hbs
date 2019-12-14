@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<title>!Pizza Re-Shop!</title>
+		<meta charset="utf-8">
+		
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="../public/css/first.css">
+  <style>
+         #tabs{font-size: 14px;}
+         .ui-widget-header {
+            background:#b9cd6d;
+            border: 1px solid #b9cd6d;
+            color: #FFFFFF;
+            font-weight: bold;
+         }
+         .ui-widget-content li{
+         	color:pink;
+         }
+      </style>-->
+	</head>
+	<body>
+	<!--	<script src="js/script1.js"></script>-->
+		<header>
+		</header>
+		<main>
+<div id="tabs" class="tabs1">
+  <ul>
+    <li><a href="#fragment-1">One</a></li>
+    <li><a href="#fragment-2">Two</a></li>
+    <li><a href="#fragment-3">Three</a></li>
+  </ul>
+  <div id="fragment-1">
+    	 <ul>
+        {{#each users}}
+            <li>
+                <p>{{this.c_lname}}</p>
+                <p>{{this.c_fname}}</p>
+            </li>
+        {{/each}}
+        </ul>
+  </div>
+  <div id="fragment-2">
+    <table>
+        <tr><th>Name</th><th>password</th><th></th></tr>
+        {{#each dishes}}
+            <tr>
+                <td>{{this.dh_name}}</td>
+                <td>{{this.price}}</td>
+            </tr>
+        {{/each}}
+    </table>
+  </div>
+  <div id="fragment-3">
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+  </div>
+</div>
+ 
+<script>
+$( "#tabs" ).tabs();
+</script>
+
+		</main>		
+		<footer>
+			<a name="cont"></a>
+			<div class="footer_content">
+			<div>
+				<p>Join us on our social accounts</p>
+				<p>Feel free to contact us</p>
+			</div>
+			<div class="social_links">
+				<ul>
+					<li><a href="https://www.facebook.com/"><img src="img/facebook.png" alt="facebook link"> facebook_account</a></li>
+					<li><a href="https://twitter.com/?lang=ru"><img src="img/twitter.png" alt="twitter link"> twitter_account</a></li>
+					<li><a href="https://www.instagram.com/?hl=ru"><img src="img/instagram.png" alt="instagram link"> instagram account</a></li>
+				</ul>
+			</div>			
+			<div class="footer_contact">
+				<ul>
+					<li>Our adress: Metalistiv street, 3</li>
+					<li>Our phone: (+380)9932904543</li>
+					<li>Our post: ourmail@gmail.com</li>
+				</ul>
+			</div>
+			</div>
+		</footer>
+	</body>
+</html>

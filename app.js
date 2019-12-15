@@ -87,7 +87,7 @@ app.post("/sign_in", urlencodedParser, function (req, res) {
       var pass2= post.f1_cust_pass;
       console.log(name2);
       console.log(pass2);
-     pool.query("SELECT c_id FROM Users WHERE password=? AND email=?",[pass2,name2],function(err,data){
+     pool.query("SELECT c_id FROM users WHERE password=? AND email=?",[pass2,name2],function(err,data){
       if(err) return console.log(err);
       if(data.length){
         pool.query("SELECT c_id,c_fname,c_lname,c_phone,c_adress FROM Customers WHERE c_id=?",[data[0].c_id],function(err,data2){
@@ -136,7 +136,7 @@ app.post("/sign_up", urlencodedParser, function (req, res) {
         if (err) {
         return console.error(error.message);
         }
-          pool.query("INSERT INTO Users(password,email,c_id) VALUES(?,?,(SELECT c_id FROM customers ORDER BY c_id DESC LIMIT 1))",[pass1,email],function(err,data){
+          pool.query("INSERT INTO users(password,email,c_id) VALUES(?,?,(SELECT c_id FROM customers ORDER BY c_id DESC LIMIT 1))",[pass1,email],function(err,data){
             if (err){
               return console.error(error.message);
             }

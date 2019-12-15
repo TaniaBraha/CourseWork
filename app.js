@@ -41,6 +41,10 @@ app.use(express.static('img'));
 
 app.get("/",function(req, res){
       res.render("firstpage.hbs");
+      notifier.notify({
+            title: 'Look here',
+            message: 'You are succesfully signed in'
+          });
 });
 
 app.get("/create", function(req, res){

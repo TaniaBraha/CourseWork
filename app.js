@@ -87,10 +87,10 @@ app.post("/sign_in", urlencodedParser, function (req, res) {
       var pass2= post.f1_cust_pass;
       console.log(name2);
       console.log(pass2);
-     pool.query("SELECT c_id FROM users WHERE password=? AND email=?",[pass2,name2],function(err,data){
+     pool.query("SELECT c_id FROM Users WHERE password=? AND email=?",[pass2,name2],function(err,data){
       if(err) return console.log(err);
       if(data.length){
-        pool.query("SELECT c_id,c_fname,c_lname,c_phone,c_adress FROM customers WHERE c_id=?",[data[0].c_id],function(err,data2){
+        pool.query("SELECT c_id,c_fname,c_lname,c_phone,c_adress FROM Customers WHERE c_id=?",[data[0].c_id],function(err,data2){
           req.session.userId=data2[0].c_id;
           req.session.user=data2[0];
           res.render("./firstpage.hbs");
@@ -122,7 +122,7 @@ app.post("/sign_up", urlencodedParser, function (req, res) {
       var pass2=post.password2;
       console.log(fname);
       console.log(date);
-      pool.query("SELECT 1 FROM customers WHERE c_email=?",[email],function(err,data){
+      pool.query("SELECT 1 FROM Customers WHERE c_email=?",[email],function(err,data){
         if(err) return console.log(err);
         if(data.length){
           message="Email already in use";
@@ -138,7 +138,7 @@ app.post("/sign_up", urlencodedParser, function (req, res) {
         if (err) {
         return console.error(error.message);
         }
-          pool.query("INSERT INTO users(password,email,c_id) VALUES(?,?,(SELECT c_id FROM customers ORDER BY c_id DESC LIMIT 1))",[pass1,email],function(err,data){
+          pool.query("INSERT INTO Users(password,email,c_id) VALUES(?,?,(SELECT c_id FROM customers ORDER BY c_id DESC LIMIT 1))",[pass1,email],function(err,data){
             if (err){
               return console.error(error.message);
             }
@@ -166,11 +166,11 @@ app.post("/reserv", urlencodedParser, function (req, res) {
     const phone=req.body.res_phone1;
     const d=new Date(date+" "+time);
     var dm= DATE_FORMATER( d, "yyyy-mm-dd HH:MM:ss" );
-    pool.query("SELECT SUM(p_count) s FROM  reservations WHERE res_time=? and rest_id=?",[DATE_FORMATER( d, "yyyy-mm-dd HH:MM:ss" ),rest],function(error,data){
+    pool.query("SELECT SUM(p_count) s FROM  Reservations WHERE res_time=? and rest_id=?",[DATE_FORMATER( d, "yyyy-mm-dd HH:MM:ss" ),rest],function(error,data){
       if(error){
         return console.log(error);
       }
-         pool.query("SELECT r_p_count FROM restaurants WHERE r_id=?",[rest],function(err,data2,fields){
+         pool.query("SELECT r_p_count FROM Restaurants WHERE r_id=?",[rest],function(err,data2,fields){
             if(err){ 
               return console.log(err);
             }
@@ -258,7 +258,7 @@ app.post("/try", urlencodedParser, function (req, res) {
     const title=req.body.order_item_title;
     if(count==1)
     {
-      pool.query("CALL Orderinside_insert((SELECT ord_id FROM orders ORDER BY ord_id DESC LIMIT 1),?,(SELECT dh_id FROM dishes where dh_name=?))",[quantity,title], function(error, results){
+      pool.query("CALL Orderinside_insert((SELECT ord_id FROM Orders ORDER BY ord_id DESC LIMIT 1),?,(SELECT dh_id FROM dishes where dh_name=?))",[quantity,title], function(error, results){
       if (error) {
         return console.error(error.message);
       }
@@ -266,7 +266,7 @@ app.post("/try", urlencodedParser, function (req, res) {
     }   
    else{ 
     for(var i=0;i<count;i++){
-      pool.query("CALL Orderinside_insert((SELECT ord_id FROM orders ORDER BY ord_id DESC LIMIT 1),?,(SELECT dh_id FROM dishes where dh_name=?))",[quantity[i],title[i]], function(error, results){
+      pool.query("CALL Orderinside_insert((SELECT ord_id FROM Orders ORDER BY ord_id DESC LIMIT 1),?,(SELECT dh_id FROM dishes where dh_name=?))",[quantity[i],title[i]], function(error, results){
       if (error) {
         return console.error(error.message);
       }

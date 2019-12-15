@@ -12,11 +12,8 @@ const Handlebars = require("handlebars");
 const DATE_FORMATER = require( 'dateformat' );
 const port = process.env.PORT;
 const notifier = require('node-notifier');
-import {notify} from '@heroku-cli/notifications'
-notify({
-  title: 'notification title',
-  message: 'notification message',
-})
+import {notify} from '@heroku-cli/notifications';
+
 // String
 
 const app = express();

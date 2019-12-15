@@ -120,8 +120,6 @@ app.post("/sign_up", urlencodedParser, function (req, res) {
       var email=post.email;
       var pass1=post.password1;
       var pass2=post.password2;
-      console.log(fname);
-      console.log(date);
       pool.query("SELECT 1 FROM Customers WHERE c_email=?",[email],function(err,data){
         if(err) return console.log(err);
         if(data.length){
@@ -143,7 +141,6 @@ app.post("/sign_up", urlencodedParser, function (req, res) {
               return console.error(error.message);
             }
           });
-          alert("Succesful sign up");
       res.redirect("/firstpage.html");
       notifier.notify({
             title: 'Look here',

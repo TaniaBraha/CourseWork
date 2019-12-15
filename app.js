@@ -255,7 +255,7 @@ app.post("/try", urlencodedParser, function (req, res) {
     const title=req.body.order_item_title;
     if(count==1)
     {
-      pool.query("CALL Orderinside_insert((SELECT ord_id FROM Orders ORDER BY ord_id DESC LIMIT 1),?,(SELECT dh_id FROM dishes where dh_name=?))",[quantity,title], function(error, results){
+      pool.query("CALL Orderinside_insert((SELECT ord_id FROM Orders ORDER BY ord_id DESC LIMIT 1),?,(SELECT dh_id FROM Dishes where dh_name=?))",[quantity,title], function(error, results){
       if (error) {
         return console.error(error.message);
       }
@@ -263,7 +263,7 @@ app.post("/try", urlencodedParser, function (req, res) {
     }   
    else{ 
     for(var i=0;i<count;i++){
-      pool.query("CALL Orderinside_insert((SELECT ord_id FROM Orders ORDER BY ord_id DESC LIMIT 1),?,(SELECT dh_id FROM dishes where dh_name=?))",[quantity[i],title[i]], function(error, results){
+      pool.query("CALL Orderinside_insert((SELECT ord_id FROM Orders ORDER BY ord_id DESC LIMIT 1),?,(SELECT dh_id FROM Dishes where dh_name=?))",[quantity[i],title[i]], function(error, results){
       if (error) {
         return console.error(error.message);
       }

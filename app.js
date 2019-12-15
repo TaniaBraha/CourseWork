@@ -1,4 +1,4 @@
-const mysql = require("mysql2");
+const mysql = require("mysql");
 const express = require("express");
 const bodyParser = require("body-parser");
 const http = require("http");
@@ -27,10 +27,12 @@ app.set("view engine","hbs");
 app.set('view engine', 'ejs');
 
 const pool = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  database: "pizza",
-  password: "hello"
+  host: "zanner.org.ua",
+  port: "33321",
+  user: "ka7502",
+  password: "snsdparty",
+  database: "ka7502"
+ 
 });
 app.use(express.static(__dirname));
 app.use(express.static(__dirname + "/public"));

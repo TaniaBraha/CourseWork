@@ -136,7 +136,7 @@ app.post("/sign_up", urlencodedParser, function (req, res) {
         if (err) {
         return console.error(error.message);
         }
-          pool.query("CALL Users_insert(?,?,(SELECT c_id FROM customers ORDER BY c_id DESC LIMIT 1))",[pass1,email],function(err,data){
+          pool.query("CALL Users_insert(?,?,(SELECT c_id FROM Customers ORDER BY c_id DESC LIMIT 1))",[pass1,email],function(err,data){
             if (err){
               return console.error(error.message);
             }

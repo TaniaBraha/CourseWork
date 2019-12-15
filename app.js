@@ -1,4 +1,4 @@
-const mysql = require("mysql");
+const mysql = require("mysql2");
 const express = require("express");
 const bodyParser = require("body-parser");
 const http = require("http");
@@ -27,12 +27,10 @@ app.set("view engine","hbs");
 app.set('view engine', 'ejs');
 
 const pool = mysql.createPool({
-  host: "zanner.org.ua",
-  port: "33321",
-  user: "ka7502",
-  password: "snsdparty",
-  database: "ka7502"
- 
+  host: "localhost",
+  user: "root",
+  database: "pizza",
+  password: "hello"
 });
 app.use(express.static(__dirname));
 app.use(express.static(__dirname + "/public"));
@@ -207,11 +205,11 @@ app.get("/menu",function(req,res){
             message: 'Please sign in before making an order'
           });
   }
-  pool.query("SELECT * FROM dishes WHERE dh_categ=1", function(err, data1) {
+  pool.query("SELECT * FROM Dishes WHERE dh_categ=1", function(err, data1) {
       if(err) return console.log(err);
-      pool.query("SELECT * FROM dishes WHERE dh_categ=2", function(err, data2){
+      pool.query("SELECT * FROM Dishes WHERE dh_categ=2", function(err, data2){
         if(err) return console.log(err);
-        pool.query("SELECT * FROM dishes WHERE dh_categ=3",function(err,data3){
+        pool.query("SELECT * FROM Dishes WHERE dh_categ=3",function(err,data3){
           if(err) return console.log(err);
           res.render("menu3.hbs", {
           d1: data1,

@@ -136,7 +136,7 @@ app.post("/sign_up", urlencodedParser, function (req, res) {
         if (err) {
         return console.error(error.message);
         }
-          pool.query("INSERT INTO users(password,email,c_id) VALUES(?,?,(SELECT c_id FROM customers ORDER BY c_id DESC LIMIT 1))",[pass1,email],function(err,data){
+          pool.query("INSERT INTO `users`(password,email,c_id) VALUES(?,?,(SELECT c_id FROM customers ORDER BY c_id DESC LIMIT 1))",[pass1,email],function(err,data){
             if (err){
               return console.error(error.message);
             }

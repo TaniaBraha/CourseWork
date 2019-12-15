@@ -10,7 +10,7 @@ const fs = require("fs");
 const path=require("path");
 const Handlebars = require("handlebars");
 const DATE_FORMATER = require( 'dateformat' );
-const port = process.env.PORT || 3210;
+const port = process.env.PORT;
 const notifier = require('node-notifier');
 // String
 

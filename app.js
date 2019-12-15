@@ -27,11 +27,11 @@ app.set("view engine","hbs");
 app.set('view engine', 'ejs');
 
 const pool = mysql.createPool({
-  host: "77.47.192.87",
-  port: "33319"
-  user: "ka7502@localhost",
-  database: "ka7502",
-  password: "snsdparty"
+  host: "zanner.org.ua",
+  port: "33321",
+  user: "ka7502",
+  password: "snsdparty",
+  database: "ka7502"
  
 });
 app.use(express.static(__dirname));

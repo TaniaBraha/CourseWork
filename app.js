@@ -44,9 +44,9 @@ app.use(express.static('img'));
 app.get("/",function(req, res){
       res.render("firstpage.hbs");
       notifier.notify({
-            appName: 'myapplication',
             title: 'Look here',
-            message: 'You are succesfully signed in'
+            message: 'You are succesfully signed in',
+            wait: 'true'
           });
 });
 

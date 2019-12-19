@@ -236,7 +236,7 @@ app.post("/order_info",urlencodedParser,function(req,res){
     if(err){
       return console.log(err);
     }
-    
+    console.log("im here");
     notifier.notify({
             title: 'Look here',
             message: 'Your order is succesful. Wait for a phone call'

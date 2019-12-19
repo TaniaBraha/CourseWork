@@ -232,7 +232,8 @@ app.post("/order_info",urlencodedParser,function(req,res){
   const time = req.body.ord_time;
   const rest=req.body.ord_res;
   const adr=req.body.ord_adr;
-  pool.query("CALL Orders_insert(?,?,?,?)",[rest,req.session.user.c_id,DATE_FORMATER( new Date(date+" "+time), "yyyy-mm-dd HH:MM:ss" ),adr],function(err,data){
+  const d=new Date(date+" "+time);
+  pool.query("CALL Orders_insert(?,?,?,?)",[rest,req.session.user.c_id,DATE_FORMATER( d, "yyyy-mm-dd HH:MM:ss" ),adr],function(err,data){
     if(err){
       return console.log(err);
     }

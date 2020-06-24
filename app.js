@@ -2,7 +2,6 @@ const mysql = require("mysql");
 const express = require("express");
 const bodyParser = require("body-parser");
 const http = require("http");
-/*const a=require("./public/js/modules.js");*/
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 
@@ -10,7 +9,7 @@ const fs = require("fs");
 const path=require("path");
 const Handlebars = require("handlebars");
 const DATE_FORMATER = require( 'dateformat' );
-const port = process.env.PORT||3000;
+const port = process.env.PORT||2000;
 const notifier = require('node-notifier');
 
 // String
@@ -31,7 +30,7 @@ const pool = mysql.createPool({
   host: "zanner.org.ua",
   port: "33321",
   user: "ka7502",
-  password: "snsdparty",
+  password: "mypassword",
   database: "ka7502"
  
 });
@@ -69,19 +68,6 @@ app.get("/order", function(req, res){
   var message='';
   res.render("order.hbs");
 });
-
-/*
-app.get('/', function(req, res){
-   if(req.session.page_views){
-      req.session.page_views++;
-      res.send("You visited this page " + req.session.page_views + " times");
-   } else {
-      req.session.page_views = 1;
-      res.send("Welcome to this page for the first time!");
-   }
-   var userId = req.session.userId;
-   console.log(userId);
-});*/
 
 
 app.post("/sign_in", urlencodedParser, function (req, res) {
@@ -167,9 +153,7 @@ app.post("/reserv", urlencodedParser, function (req, res) {
     const rest=req.body.res_res;
     const name=req.body.res_name1;
     const phone=req.body.res_phone1;
-    const d=new Date(date+" "+time);
-    var dm= DATE_FORMATER( d, "yyyy-mm-dd HH:MM:ss" );
-    pool.query("SELECT SUM(p_count) s FROM  Reservations WHERE res_time=? and rest_id=?",[DATE_FORMATER( d, "yyyy-mm-dd HH:MM:ss" ),rest],function(error,data){
+    pool.query("SELECT SUM(p_count) s FROM  Reservations WHERE res_time=? and rest_id=?",[DATE_FORMATER( new Date(date+" "+time), "yyyy-mm-dd HH:MM:ss" ),rest],function(error,data){
       if(error){
         return console.log(error);
       }
@@ -186,7 +170,7 @@ app.post("/reserv", urlencodedParser, function (req, res) {
               res.redirect("/firstpage.html");
             }
             else{
-              pool.query("CALL Reservations_insert(?,?,?,?,?)",[rest,people,DATE_FORMATER( d, "yyyy-mm-dd HH:MM:ss" ),name,phone], function(error, results){
+              pool.query("CALL Reservations_insert(?,?,?,?,?)",[rest,people,DATE_FORMATER( new Date(date+" "+time), "yyyy-mm-dd HH:MM:ss" ),name,phone], function(error, results){
                 if (error) {
                   return console.error(error.message);
                }
@@ -232,17 +216,17 @@ app.post("/order_info",urlencodedParser,function(req,res){
   const time = req.body.ord_time;
   const rest=req.body.ord_res;
   const adr=req.body.ord_adr;
-  const d=new Date(date+" "+time);
-  pool.query("CALL Orders_insert(?,?,?,?)",[rest,req.session.user.c_id,DATE_FORMATER( d, "yyyy-mm-dd HH:MM:ss" ),adr],function(err,data){
+  pool.query("CALL Orders_insert(?,?,?,?)",[rest,req.session.user.c_id,DATE_FORMATER(new Date(date+" "+time), "yyyy-mm-dd HH:MM:ss" ),adr],function(err,data){
     if(err){
       return console.log(err);
     }
-    console.log("im here");
+    else{
+    console.log("im here in app");
     notifier.notify({
             title: 'Look here',
             message: 'Your order is succesful. Wait for a phone call'
           });
-  
+    }
   });
 });
 
@@ -265,6 +249,7 @@ app.post("/try", urlencodedParser, function (req, res) {
       if (error) {
         return console.error(error.message);
       }
+      console.log("try 1");
       });
     }   
    else{ 
@@ -273,6 +258,7 @@ app.post("/try", urlencodedParser, function (req, res) {
       if (error) {
         return console.error(error.message);
       }
+      console.log("try amnu");
    });
     }
  }
@@ -280,46 +266,7 @@ app.post("/try", urlencodedParser, function (req, res) {
 });
 
 
-/*app.get("/menu", urlencodedParser, function (req, res) {
-    if(!req.body) return res.sendStatus(400);
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    console.log("before exports");
-    
-    pool.query('SELECT * FROM users;', function(error, results) {
-        console.log("inside exports");
-        let str = '<head><title>menu</title></head><body><p>hello iasa!</p>';
-        if (error) throw error
-          str+='</body>';
-          res.write(str);
-      });
 
-});*/
-
-
-/*app.post("/firstpage.html", function(req, res){
-    fs.createReadStream('public/firstpage.html').pipe(res);
-});
-/*
-http.createServer(function(request, response){
-      
-    console.log(`Запрошенный адрес: ${request.url}`);
-    // получаем путь после слеша
-    const filePath = request.url.substr(1);
-    // смотрим, есть ли такой файл
-    fs.access(filePath, fs.constants.R_OK, err => {
-        // если произошла ошибка - отправляем статусный код 404
-        if(err){
-            response.statusCode = 404;
-            response.end("Resourse not found!");
-        }
-        else{
-            fs.createReadStream(filePath).pipe(response);
-        }
-      });
-}).listen(3000, function(){
-    console.log("Server started at 3000");
-});
-*/
 app.listen(port, function(){
   console.log("Сервер ожидает подключения...");
 });
